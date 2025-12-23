@@ -1,0 +1,25 @@
+{
+  "display": {
+    "title": "Example Advancement",
+    "description": "Unlock this by obtaining an Example Item!",
+    "icon": {
+      "item": "neoforge_mod:example_item"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_example_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "neoforge_mod:example_item"
+          }
+        ]
+      }
+    }
+  }
+}

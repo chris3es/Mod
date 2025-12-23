@@ -1,0 +1,14 @@
+modLoader="neoforge"
+loaderVersion="[1.21.1,)"
+
+license="MIT"
+modId="neoforge_mod"
+
+version="${file.jarVersion}"
+displayName="NeoForge Example Mod"
+credits="Copilot"
+authors="GitHub Starter Template"
+
+description='''
+A template for NeoForge 1.21.1 mods with creative tabs, advancements, JEI/REI hooks.
+'''

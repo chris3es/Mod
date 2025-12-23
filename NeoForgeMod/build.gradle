@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.gradle.userdev' version '7.0.65' // Check NeoForge for latest plugin version
+}
+
+group = 'com.example.neoforge_mod'
+version = '1.0.0'
+archivesBaseName = 'neoforge_mod'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+minecraft {
+    mappings channel: 'official', version: '1.21.1'
+    runs {
+        client {
+            workingDirectory file('run')
+            mods {
+                neoforge_mod {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory file('run')
+            mods {
+                neoforge_mod {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    maven { url 'https://maven.neoforged.net/releases' }
+    mavenCentral()
+    // Add JEI/REI maven if depending directly
+}
+
+dependencies {
+    implementation 'net.neoforged:neoforge:1.21.1-2025.1.0'
+    // Optionally, JEI/REI API for dev purposes only
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
